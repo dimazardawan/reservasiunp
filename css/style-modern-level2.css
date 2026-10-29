@@ -1,0 +1,324 @@
+/* ============================================================
+   LEVEL 2 ULTRA MODERN UI — UNIVERSITAS NEGERI PADANG
+   Dibuat khusus untuk RIKO FAJRI
+   ============================================================ */
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   GLOBAL BACKGROUND (HERO) — Menggunakan foto UNP
+   ============================================================ */
+body {
+    background: url('../img/unp-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    backdrop-filter: blur(3px);
+}
+
+/* Tambahkan overlay agar elegan */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(4px);
+    z-index: -1;
+}
+
+/* ============================================================
+   GLOBAL CARD DESIGN — Glassmorphism Modern
+   ============================================================ */
+.container-card,
+.card,
+.dashboard-box,
+.form-box {
+    background: rgba(255,255,255,0.70);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 25px 35px;
+    width: 450px;
+    margin: 40px auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   TITLE STYLE
+   ============================================================ */
+h2 {
+    text-align: center;
+    color: #1d3557;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1d3557;
+    margin-bottom: 15px;
+}
+
+/* ============================================================
+   INPUT + SELECT STYLING
+   ============================================================ */
+input, select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 2px solid #cdd7e3;
+    font-size: 15px;
+    margin: 12px 0 20px;
+    outline: none;
+    transition: .2s;
+}
+
+input:focus, select:focus {
+    border-color: #457b9d;
+    box-shadow: 0 0 8px rgba(69,123,157,.4);
+}
+
+/* ============================================================
+   BUTTON MODERN
+   ============================================================ */
+button, .btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #1d3557;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+button:hover, .btn:hover {
+    background: #14243d;
+    transform: translateY(-2px);
+}
+
+/* BUTTON APPROVE / REJECT */
+.btn-approve {
+    background: #2ecc71 !important;
+}
+
+.btn-approve:hover {
+    background: #27ae60 !important;
+}
+
+.btn-reject {
+    background: #e74c3c !important;
+}
+
+.btn-reject:hover {
+    background: #c0392b !important;
+}
+
+/* ============================================================
+   DASHBOARD BUTTON LIST (Mahasiswa / Admin)
+   ============================================================ */
+.menu-btn {
+    padding: 16px;
+    background: #1d3557;
+    color: white;
+    border-radius: 18px;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    margin-bottom: 18px;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.menu-btn:hover {
+    background: #16304d;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   ADMIN STATS BOX — Tampilan SaaS Dashboard Premium
+   ============================================================ */
+.stats-container {
+    width: 900px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.stats-box {
+    flex: 1;
+    background: rgba(255,255,255,0.72);
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    transition: .25s;
+}
+
+.stats-box:hover {
+    transform: translateY(-6px);
+}
+
+.stats-number {
+    font-size: 40px;
+    font-weight: bold;
+    color: #1d3557;
+}
+
+.stats-label {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #333;
+}
+
+/* ============================================================
+   TABEL PREMIUM — Rapi Presisi
+   ============================================================ */
+.table-wrapper {
+    width: 90%;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.75);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #1d3557;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+
+td {
+    padding: 14px;
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #dce5f2;
+    font-size: 15px;
+    text-align: center;
+}
+
+tr:hover td {
+    background: #edf4ff;
+}
+
+/* Kolom *tidak berdempetan*, spacing presisi */
+th, td {
+    white-space: nowrap;
+}
+
+/* ============================================================
+   DOWNLOAD LINK
+   ============================================================ */
+.download-link {
+    background: #1d3557;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* ============================================================
+   KALENDER MODERN
+   ============================================================ */
+.calendar-box {
+    width: 900px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.75);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+}
+
+.calendar-box td {
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: .25s;
+}
+
+.calendar-box td:hover {
+    background: #cfe1ff;
+    transform: scale(1.06);
+}
+
+.today {
+    background: #a8c6ff !important;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+/* ============================================================
+   SLOT JAM ELEGAN
+   ============================================================ */
+.slot {
+    padding: 18px;
+    border-radius: 18px;
+    margin-bottom: 16px;
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slot-free {
+    background: #d9fbe6;
+    color: #0a5a2b;
+}
+
+.slot-free:hover {
+    background: #c7f5d8;
+    transform: translateX(5px);
+}
+
+.slot-booked {
+    background: #ffd2d2;
+    color: #a52525;
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+.back-btn {
+    display: block;
+    width: 220px;
+    padding: 14px;
+    background: #1d3557;
+    color: white;
+    border-radius: 16px;
+    margin: 25px auto 0;
+    text-align: center;
+    transition: .25s;
+}
+
+.back-btn:hover {
+    background: #142b47;
+    transform: translateY(-3px);
+}

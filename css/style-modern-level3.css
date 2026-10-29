@@ -1,0 +1,255 @@
+/* ============================================================
+   LEVEL 3 — SUPER PREMIUM UI
+   Dibuat khusus untuk RIKO FAJRI (Universitas Negeri Padang)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================================
+   BACKGROUND + GLASS OVERLAY
+   ============================================================ */
+body {
+    background: url('../img/unp-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.50);
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
+/* ============================================================
+   NAVBAR MODERN
+   ============================================================ */
+.navbar {
+    width: 100%;
+    background: rgba(29,53,87,0.85);
+    color: white;
+    padding: 15px 40px;
+    font-size: 20px;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+}
+
+/* ============================================================
+   SUPER CARD (GLASS)
+   ============================================================ */
+.super-card {
+    background: rgba(255,255,255,0.75);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding: 40px;
+    width: 1000px;
+    margin: 50px auto;
+    animation: fadeIn .6s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* ============================================================
+   TABEL PREMIUM — FIX MELEBAR
+   ============================================================ */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* <-- FIX KUNCI */
+}
+
+th {
+    background: #1d3557;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px;
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #dce5f2;
+    font-size: 15px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+tr:hover td {
+    background: #eaf2ff;
+}
+
+/* FIX KOLOM AKSI BIAR PAS */
+th:nth-child(7),
+td:nth-child(7) {
+    width: 160px !important;
+}
+
+/* ============================================================
+   BUTTON APPROVE / REJECT
+   ============================================================ */
+.btn-action-box {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-approve {
+    background: #2ecc71;
+    padding: 9px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-reject {
+    background: #e74c3c;
+    padding: 9px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-approve:hover { background:#27ae60; }
+.btn-reject:hover { background:#c0392b; }
+
+/* ============================================================
+   DOWNLOAD BUTTON
+   ============================================================ */
+.download-link {
+    background: #1d3557;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.download-link:hover {
+    background: #14243d;
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+.back-btn {
+    width: 230px;
+    padding: 14px;
+    background: #1d3557;
+    color: white;
+    border-radius: 14px;
+    display: block;
+    text-align: center;
+    margin: 40px auto 0;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background:#14243d;
+}
+
+/* ============================================================
+   FOOTER PREMIUM
+   ============================================================ */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 18px;
+    background: rgba(0,0,0,0.25);
+    color: white;
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+
+/* ===========================
+   FIX TABEL RAPI PRESISI
+   =========================== */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* WAJIB */
+}
+
+/* HEADER */
+th {
+    background: #1d3557;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* DATA */
+td {
+    padding: 14px 10px;
+    background: rgba(255,255,255,0.85);
+    font-size: 15px;
+    border-bottom: 1px solid #dce5f2;
+    white-space: nowrap;           /* TEKS TIDAK TURUN */
+    overflow: hidden; 
+    text-overflow: ellipsis;       /* Kalau panjang → … */
+}
+
+/* TENTUKAN LEBAR KOLOM */
+th:nth-child(1), td:nth-child(1) { width: 130px; }
+th:nth-child(2), td:nth-child(2) { width: 190px; }
+th:nth-child(3), td:nth-child(3) { width: 220px; }
+th:nth-child(4), td:nth-child(4) { width: 120px; }
+th:nth-child(5), td:nth-child(5) { width: 130px; }
+th:nth-child(6), td:nth-child(6) { width: 140px; }
+th:nth-child(7), td:nth-child(7) { width: 160px; }
+
+/* DOWNLOAD BUTTON */
+.download-link {
+    background: #1d3557;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: white;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* TOMBOL AKSI SELARAS */
+.btn-action-box {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-approve, .btn-reject {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+}
